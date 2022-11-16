@@ -21,16 +21,22 @@ const langOption = {
   }),
 };
 
-const showMainOptionsMenu = {
+const getVisibilityMainMenu = () => ({
   reply_markup: JSON.stringify({
     inline_keyboard: [
       [
-        { text: "Да", callback_data: "yes" },
-        { text: "Позже", callback_data: "later" },
+        {
+          text: CURRENT_LANGUAGE.visibilityMainMenu.yes,
+          callback_data: "yes",
+        },
+        {
+          text: CURRENT_LANGUAGE.visibilityMainMenu.later,
+          callback_data: "later",
+        },
       ],
     ],
   }),
-};
+});
 
 const setLanguage = (code) => {
   switch (code) {
@@ -46,27 +52,37 @@ const setLanguage = (code) => {
   }
 };
 
-function getMainMenu() {
-  return {
-    reply_markup: JSON.stringify({
-      keyboard: [
-        [
-          { text: CURRENT_LANGUAGE.mainMenu.liveStream },
-          { text: CURRENT_LANGUAGE.mainMenu.churchInfo },
-          { text: CURRENT_LANGUAGE.mainMenu.donation },
-        ],
-        [
-          { text: CURRENT_LANGUAGE.mainMenu.churchChat },
-          { text: CURRENT_LANGUAGE.mainMenu.churchLeaders },
-          { text: CURRENT_LANGUAGE.mainMenu.events },
-        ],
+const getMainMenu = () => ({
+  reply_markup: JSON.stringify({
+    keyboard: [
+      [
+        { text: CURRENT_LANGUAGE.mainMenu.liveStream },
+        { text: CURRENT_LANGUAGE.mainMenu.churchInfo },
+        { text: CURRENT_LANGUAGE.mainMenu.donation },
       ],
-      resize_keyboard: true,
-    }),
-  };
-}
+      [
+        { text: CURRENT_LANGUAGE.mainMenu.churchChat },
+        { text: CURRENT_LANGUAGE.mainMenu.churchLeaders },
+        { text: CURRENT_LANGUAGE.mainMenu.events },
+      ],
+    ],
+    resize_keyboard: true,
+  }),
+});
 
-const start = () => {
+const checkMainMenu = async (chatId, text) => {
+  switch (text) {
+    case CURRENT_LANGUAGE.mainMenu.donation: {
+      await bot.sendMessage(chatId, "номер");
+      await bot.sendMessage(chatId, "название");
+      return bot.sendMessage(chatId, "кому");
+    }
+    default:
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.notFound);
+  }
+};
+
+const start = (firstMsg) => {
   bot.setMyCommands([
     {
       command: "/start",
@@ -85,7 +101,10 @@ const start = () => {
   bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
-    CURRENT_LANGUAGE = setLanguage(msg.from.language_code);
+    if (firstMsg) {
+      CURRENT_LANGUAGE = setLanguage(msg.from.language_code);
+      firstMsg = false;
+    }
 
     switch (text) {
       case "/start": {
@@ -93,28 +112,12 @@ const start = () => {
         return bot.sendMessage(
           chatId,
           CURRENT_LANGUAGE.showMainOptionsMenu,
-          showMainOptionsMenu
+          getVisibilityMainMenu()
         );
       }
 
       case "/menu": {
-        return bot.sendMessage(chatId, "1", {
-          reply_markup: JSON.stringify({
-            keyboard: [
-              [
-                { text: "Прямая трансляция" },
-                { text: "Информация церкви" },
-                { text: "Пожертвование" },
-              ],
-              [
-                { text: "Церковный чат" },
-                { text: "Лидеры церкви" },
-                { text: "wdwdwd" },
-              ],
-            ],
-            resize_keyboard: true,
-          }),
-        });
+        return bot.sendMessage(chatId, "1", getMainMenu());
       }
 
       case "/language": {
@@ -124,14 +127,9 @@ const start = () => {
           langOption
         );
       }
-      case "Пожертвование": {
-        await bot.sendMessage(chatId, "номер");
-        await bot.sendMessage(chatId, "название");
-        return bot.sendMessage(chatId, "кому");
-      }
 
       default:
-        await bot.sendMessage(chatId, CURRENT_LANGUAGE.notFound);
+        await checkMainMenu(chatId, text);
     }
   });
 
@@ -165,4 +163,4 @@ const start = () => {
   });
 };
 
-start();
+start(true);

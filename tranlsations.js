@@ -5,7 +5,7 @@ const RU = {
   setLanguage: "Благодарю, По умолчанию установлен русский язык",
   showMainOptionsMenu: "Отобразить главное меню?",
   notFound: "Выбери, пожалуйста, другую команду",
-  laterLanguageMessage: "Ты всегда можешь включить оасновное меню в настройках",
+  laterLanguageMessage: "Ты всегда можешь включить основное меню в настройках",
   mainMenu: {
     liveStream: "Прямая трансляция",
     churchInfo: "Информация o церкви",
@@ -13,6 +13,10 @@ const RU = {
     churchChat: "Церковный чат",
     churchLeaders: "Лидеры церкви",
     events: "Мероприятия",
+  },
+  visibilityMainMenu: {
+    yes: "Да",
+    later: "Позже",
   },
 };
 const UA = {
@@ -32,10 +36,14 @@ const UA = {
     churchLeaders: "Лідери церкви",
     events: "Події",
   },
+  visibilityMainMenu: {
+    yes: "Так",
+    later: "Пізніше",
+  },
 };
 const EN = {
   welcome:
-    "Congratulations, my friend! By default, the Ukrainian language is set for this chat. if you want, you can change the language in the additional settings",
+    "Congratulations, my friend! By default, the English language is set for this chat. if you want, you can change the language in the additional settings",
   askLanguage:
     "what language is more convenient for you to receive information in?",
   setLanguage: "Thank you, the default language is English",
@@ -51,10 +59,14 @@ const EN = {
     churchLeaders: "Leaders of the Church",
     events: "Events",
   },
+  visibilityMainMenu: {
+    yes: "Yes",
+    later: "Later",
+  },
 };
 const PL = {
   welcome:
-    "Gratulacje, kolego! Domyślnie jest ustawiony język ukraiński dla tego czatu, w razie potrzeby język można zmienić w opcjonalnym ustawieniu",
+    "Gratulacje, kolego! Domyślnie jest ustawiony język polski dla tego czatu, w razie potrzeby język można zmienić w opcjonalnym ustawieniu",
   askLanguage: "w jakim języku wolisz otrzymywać informacje?",
   setLanguage: "Dziękuję, domyślnie jest ustawiony język polski",
   showMainOptionsMenu: "Wyświetl menu główne?",
@@ -67,6 +79,10 @@ const PL = {
     churchChat: "Czat Kościelny",
     churchLeaders: "Przywódcy Kościoła",
     events: "Wydarzenia",
+  },
+  visibilityMainMenu: {
+    tak: "Tak",
+    later: "Później",
   },
 };
 
