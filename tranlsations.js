@@ -5,7 +5,6 @@ const RU = {
   setLanguage: "Благодарю, По умолчанию установлен русский язык",
   showMainOptionsMenu: "Отобразить главное меню?",
   notFound: "Выбери, пожалуйста, другую команду",
-  laterLanguageMessage: "Ты всегда можешь включить основное меню в настройках",
   mainMenu: {
     liveStream: "Прямая трансляция",
     churchInfo: "Информация o церкви",
@@ -14,9 +13,10 @@ const RU = {
     churchLeaders: "Лидеры церкви",
     events: "Мероприятия",
   },
-  visibilityMainMenu: {
-    yes: "Да",
-    later: "Позже",
+  donation: {
+    title: "Назначение платежа:",
+    recipient: "Получатель:",
+    number: "Номер банковского счета:",
   },
 };
 const UA = {
@@ -26,8 +26,6 @@ const UA = {
   setLanguage: "Дякую, За замовчуванням встановлено українську мову",
   showMainOptionsMenu: "Відобразити головне меню?",
   notFound: "Вибери, будь ласка, іншу команду",
-  laterLanguageMessage:
-    "Ви завжди можете ввімкнути основне меню в Налаштуваннях",
   mainMenu: {
     liveStream: "Пряма трансляція",
     churchInfo: "Iнформація o церкви",
@@ -36,9 +34,10 @@ const UA = {
     churchLeaders: "Лідери церкви",
     events: "Події",
   },
-  visibilityMainMenu: {
-    yes: "Так",
-    later: "Пізніше",
+  donation: {
+    title: "Призначення платежу:",
+    recipient: "Одержувач:",
+    number: "Номер банківського рахунку:",
   },
 };
 const EN = {
@@ -49,7 +48,6 @@ const EN = {
   setLanguage: "Thank you, the default language is English",
   showMainOptionsMenu: "display the main menu?",
   notFound: "Please choose another command",
-  laterLanguageMessage: "You can always turn on the main menu in the settings",
   menuLiveStream: "Live Stream",
   mainMenu: {
     liveStream: "Live Stream",
@@ -59,9 +57,10 @@ const EN = {
     churchLeaders: "Leaders of the Church",
     events: "Events",
   },
-  visibilityMainMenu: {
-    yes: "Yes",
-    later: "Later",
+  donation: {
+    title: "Purpose of payment:",
+    recipient: "Recipient:",
+    number: "Bank account number:",
   },
 };
 const PL = {
@@ -71,7 +70,6 @@ const PL = {
   setLanguage: "Dziękuję, domyślnie jest ustawiony język polski",
   showMainOptionsMenu: "Wyświetl menu główne?",
   notFound: "Wybierz inne polecenie",
-  laterLanguageMessage: "Zawsze możesz włączyć menu główne w Ustawieniach",
   mainMenu: {
     liveStream: "Transmisja na żywo",
     churchInfo: "Informacje o Kościele",
@@ -80,9 +78,10 @@ const PL = {
     churchLeaders: "Przywódcy Kościoła",
     events: "Wydarzenia",
   },
-  visibilityMainMenu: {
-    tak: "Tak",
-    later: "Później",
+  donation: {
+    title: "Cel płatności:",
+    recipient: "Odbiorca:",
+    number: "Numer konta bankowego:",
   },
 };
 

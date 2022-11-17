@@ -21,23 +21,6 @@ const langOption = {
   }),
 };
 
-const getVisibilityMainMenu = () => ({
-  reply_markup: JSON.stringify({
-    inline_keyboard: [
-      [
-        {
-          text: CURRENT_LANGUAGE.visibilityMainMenu.yes,
-          callback_data: "yes",
-        },
-        {
-          text: CURRENT_LANGUAGE.visibilityMainMenu.later,
-          callback_data: "later",
-        },
-      ],
-    ],
-  }),
-});
-
 const setLanguage = (code) => {
   switch (code) {
     case "ua":
@@ -73,9 +56,43 @@ const getMainMenu = () => ({
 const checkMainMenu = async (chatId, text) => {
   switch (text) {
     case CURRENT_LANGUAGE.mainMenu.donation: {
-      await bot.sendMessage(chatId, "номер");
-      await bot.sendMessage(chatId, "название");
-      return bot.sendMessage(chatId, "кому");
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.recipient);
+      await bot.sendMessage(chatId, PERMISSIONS.donation.recipient);
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.number);
+      await bot.sendMessage(chatId, PERMISSIONS.donation.number);
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.title);
+      return bot.sendMessage(chatId, PERMISSIONS.donation.title);
+    }
+    case CURRENT_LANGUAGE.mainMenu.churchInfo: {
+      return bot.sendMessage(chatId, "ссылка или просто текст с картинками?");
+    }
+    case CURRENT_LANGUAGE.mainMenu.churchChat: {
+      await bot.sendMessage(chatId, PERMISSIONS.urls.viber);
+      return bot.sendMessage(
+        chatId,
+        "ссылка / qr код в вайбер / чат в телеге закрыт"
+      );
+    }
+    case CURRENT_LANGUAGE.mainMenu.events: {
+      return bot.sendMessage(
+        chatId,
+        "ссылка на сайт? \n предстоящие события? \n другие опции?"
+      );
+    }
+    case CURRENT_LANGUAGE.mainMenu.churchLeaders: {
+      await bot.sendMessage(chatId, "ссылка на ютуб?");
+      await bot.sendMessage(chatId, "ссылка на ютуб?");
+      return bot.sendMessage(
+        chatId,
+        "Больше информации на сайте " + PERMISSIONS.urls.church
+      );
+    }
+    case CURRENT_LANGUAGE.mainMenu.liveStream: {
+      await bot.sendMessage(
+        chatId,
+        "ссылка на ютуб? \n последняя трансляция? \n другие опции?"
+      );
+      return bot.sendMessage(chatId, PERMISSIONS.urls.youtube);
     }
     default:
       await bot.sendMessage(chatId, CURRENT_LANGUAGE.notFound);
@@ -90,10 +107,6 @@ const start = (firstMsg) => {
     },
     {
       command: "/language",
-      description: "изменить язык",
-    },
-    {
-      command: "/menu",
       description: "изменить язык",
     },
   ]);
@@ -112,12 +125,8 @@ const start = (firstMsg) => {
         return bot.sendMessage(
           chatId,
           CURRENT_LANGUAGE.showMainOptionsMenu,
-          getVisibilityMainMenu()
+          getMainMenu()
         );
-      }
-
-      case "/menu": {
-        return bot.sendMessage(chatId, "1", getMainMenu());
       }
 
       case "/language": {
@@ -148,14 +157,6 @@ const start = (firstMsg) => {
           CURRENT_LANGUAGE.setLanguage,
           getMainMenu()
         );
-      }
-
-      // show menu logic
-      case "yes": {
-        return bot.sendMessage(chatId, "1", getMainMenu());
-      }
-      case "later": {
-        return bot.sendMessage(chatId, CURRENT_LANGUAGE.laterLanguageMessage);
       }
     }
 
