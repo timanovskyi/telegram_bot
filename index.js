@@ -67,24 +67,34 @@ const checkMainMenu = async (chatId, text) => {
       return bot.sendMessage(chatId, "ссылка или просто текст с картинками?");
     }
     case CURRENT_LANGUAGE.mainMenu.churchChat: {
-      await bot.sendMessage(chatId, PERMISSIONS.urls.viber);
+      await bot.sendMessage(chatId, PERMISSIONS.urls.viber, {
+        disable_web_page_preview: true,
+      });
       return bot.sendMessage(
         chatId,
         "ссылка / qr код в вайбер / чат в телеге закрыт"
       );
     }
     case CURRENT_LANGUAGE.mainMenu.events: {
+      await bot.sendPhoto(chatId, PERMISSIONS.urls.homeGroupPhoto, {
+        caption: `${CURRENT_LANGUAGE.homeGroup}${PERMISSIONS.homeGroup.address}`,
+      });
       return bot.sendMessage(
         chatId,
-        "ссылка на сайт? \n предстоящие события? \n другие опции?"
+        `${CURRENT_LANGUAGE.moreEvents}\n${PERMISSIONS.urls.insta}`
       );
     }
     case CURRENT_LANGUAGE.mainMenu.churchLeaders: {
-      await bot.sendMessage(chatId, "ссылка на ютуб?");
-      await bot.sendMessage(chatId, "ссылка на ютуб?");
+      await bot.sendPhoto(chatId, PERMISSIONS.info.pastor_1.photo, {
+        caption: `${CURRENT_LANGUAGE.pastorsInfo.title}\n${PERMISSIONS.info.pastor_1.name}\n${CURRENT_LANGUAGE.pastorsInfo.tel}${PERMISSIONS.info.pastor_1.tel}`,
+      });
+      await bot.sendPhoto(chatId, PERMISSIONS.info.pastor_2.photo, {
+        caption: `${CURRENT_LANGUAGE.pastorsInfo.title}\n${PERMISSIONS.info.pastor_2.name}\n${CURRENT_LANGUAGE.pastorsInfo.tel}${PERMISSIONS.info.pastor_2.tel}`,
+      });
       return bot.sendMessage(
         chatId,
-        "Больше информации на сайте " + PERMISSIONS.urls.church
+        `${CURRENT_LANGUAGE.pastorsInfo.moreInfo}\n${PERMISSIONS.urls.church}`,
+        { disable_web_page_preview: true }
       );
     }
     case CURRENT_LANGUAGE.mainMenu.liveStream: {
@@ -121,12 +131,7 @@ const start = (firstMsg) => {
 
     switch (text) {
       case "/start": {
-        await bot.sendMessage(chatId, CURRENT_LANGUAGE.welcome);
-        return bot.sendMessage(
-          chatId,
-          CURRENT_LANGUAGE.showMainOptionsMenu,
-          getMainMenu()
-        );
+        return bot.sendMessage(chatId, CURRENT_LANGUAGE.welcome, getMainMenu());
       }
 
       case "/language": {
