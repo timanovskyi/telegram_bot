@@ -64,7 +64,14 @@ const checkMainMenu = async (chatId, text) => {
       return bot.sendMessage(chatId, PERMISSIONS.donation.title);
     }
     case CURRENT_LANGUAGE.mainMenu.churchInfo: {
-      return bot.sendMessage(chatId, "ссылка или просто текст с картинками?");
+      await bot.sendPhoto(chatId, PERMISSIONS.urls.churchInfo, {
+        caption: `${CURRENT_LANGUAGE.churchInfo}`,
+      });
+      return bot.sendMessage(
+        chatId,
+        `${CURRENT_LANGUAGE.pastorsInfo.moreInfo}\n${PERMISSIONS.urls.church}`,
+        { disable_web_page_preview: true }
+      );
     }
     case CURRENT_LANGUAGE.mainMenu.churchChat: {
       await bot.sendMessage(chatId, PERMISSIONS.urls.viber, {
@@ -117,7 +124,7 @@ const start = (firstMsg) => {
     },
     {
       command: "/language",
-      description: "изменить язык",
+      description: "change language",
     },
   ]);
 

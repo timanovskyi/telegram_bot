@@ -34,6 +34,17 @@ const RU = {
     "\n" +
     "📍Ждём тебя каждую среду в 19:30, по адресам:\n" +
     "\n",
+  churchInfo:
+    "Дорогой Друг!\n" +
+    "\n" +
+    "Церковь «Спасение» – это место, где человек соприкасается с Божьей реальностью, силой Его безмерной благодати и любви, под воздействием которой, получает СПАСЕНИЕ 🕊\n" +
+    "\n" +
+    "▫️ Церковь «Спасение» — это место, где каждый человек может раскрыть свой духовный потенциал, заложенный в него Богом, а также развиваться в своем призвании и дарах.\n" +
+    "\n" +
+    "▫️Наши ценности — это простота христианства, отношения, искренность, трудолюбие, верность и посвященность.\n" +
+    "\n" +
+    "💭 Апостол Павел учит, что христиане получают приращение к Телу «…при действии в свою меру каждого члена.» (Еф. 4:16)\n" +
+    "Каждого из нас обьеденяет любовь к Богу и любовь к людям. Мы призваны к проповеди Евангелия, что и является главной целью нашего служения.",
 };
 const UA = {
   welcome:
@@ -71,6 +82,17 @@ const UA = {
     "\n" +
     "📍Чекаємо на тебе щосереди о 19: 30, за адресами: \n" +
     "\n",
+  churchInfo:
+    "Дорогий друже!\n" +
+    "\n" +
+    "Церква «Спасіння» - це місце, де людина стикається з Божою реальністю, силою його безмірної благодаті і любові, під впливом якої, отримує порятунок 🕊  n" +
+    "\n" +
+    "▫️ Церква «Спасіння» - це місце, де кожна людина може розкрити свій духовний потенціал, закладений в нього Богом, а також розвиватися в своєму покликанні і дарах.\n" +
+    "\n" +
+    "▫️Наші цінності-це простота християнства, відносини, щирість, працьовитість, вірність і посвяченість.\n" +
+    "\n" +
+    "💭 Апостол Павло вчить, що християни отримують прирощення до тіла «...при дії в свою міру кожного члена. (Еф. 4:16)\n" +
+    "Кожного з нас об'єднує любов до Бога і любов до людей. Ми покликані до проповіді Євангелія, що і є головною метою нашого служіння.",
 };
 const EN = {
   welcome:
@@ -110,6 +132,17 @@ const EN = {
     "\n" +
     "📍We are waiting for you every Wednesday at 19:30, at the following addresses:\n" +
     "\n",
+  churchInfo:
+    "Dear Friend!\n" +
+    "\n" +
+    "The Church of Salvation is a place where a person comes into contact with God's reality, by the power of His immeasurable grace and love, under the influence of which he receives SALVATION 🕊\n" +
+    "\n" +
+    "▫️ The Church of Salvation is a place where each person can reveal his spiritual potential, laid down in him by God, as well as develop in his vocation and gifts.\n" +
+    "\n" +
+    "▫️Our values are simplicity of Christianity, relationships, sincerity, hard work, loyalty and dedication.\n" +
+    "\n" +
+    "The Apostle Paul teaches that Christians receive an increment to the Body ...when each member acts to its own measure. (Eph. 4:16)\n" +
+    "Each of us is united by love for God and love for people. We are called to preach the gospel, which is the main purpose of our ministry.",
 };
 const PL = {
   welcome:
@@ -147,6 +180,17 @@ const PL = {
     "\n" +
     "📍Czekamy na Ciebie w każdą środę o 19: 30, pod adresami:\n" +
     "\n",
+  churchInfo:
+    "Drogi Przyjacielu!\n" +
+    "\n" +
+    "The Church of Salvation to miejsce, w którym człowiek styka się z rzeczywistością Bożą, mocą jego ogromnej łaski i miłości, pod wpływem której otrzymuje zbawienie 🕊\n" +
+    "\n" +
+    "▫️The Church of Salvation to miejsce, w którym każdy człowiek może odkryć swój duchowy potencjał, który w nim tkwi, a także rozwijać się w swoim powołaniu i darach.\n" +
+    "\n" +
+    "▫️Nasze wartości to prostota chrześcijaństwa, postawy, szczerość, pracowitość, lojalność i poświęcenie.\n" +
+    "\n" +
+    "💭Apostoł Paweł naucza, że chrześcijanie otrzymują przyrost ciała ...działając na miarę każdego członka. (EF. 4:16)\n" +
+    "Każdego z nas objawia miłość do Boga i miłość do ludzi. Jesteśmy powołani do głoszenia Ewangelii, co jest głównym celem naszej służby.",
 };
 
 module.exports = { RU, UA, EN, PL };
