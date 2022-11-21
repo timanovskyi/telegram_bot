@@ -48,6 +48,7 @@ const getMainMenu = () => ({
         { text: CURRENT_LANGUAGE.mainMenu.churchLeaders },
         { text: CURRENT_LANGUAGE.mainMenu.events },
       ],
+      [{ text: CURRENT_LANGUAGE.mainMenu.feedback }],
     ],
     resize_keyboard: true,
   }),
@@ -63,6 +64,13 @@ const checkMainMenu = async (chatId, text) => {
       await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.title);
       return bot.sendMessage(chatId, PERMISSIONS.donation.title);
     }
+    case CURRENT_LANGUAGE.mainMenu.feedback: {
+      return bot.sendMessage(
+        chatId,
+        `${CURRENT_LANGUAGE.ourFeedback}\n${PERMISSIONS.urls.feedback}`,
+        { disable_web_page_preview: true }
+      );
+    }
     case CURRENT_LANGUAGE.mainMenu.churchInfo: {
       await bot.sendPhoto(chatId, PERMISSIONS.urls.churchInfo, {
         caption: `${CURRENT_LANGUAGE.churchInfo}`,
@@ -74,12 +82,16 @@ const checkMainMenu = async (chatId, text) => {
       );
     }
     case CURRENT_LANGUAGE.mainMenu.churchChat: {
-      await bot.sendMessage(chatId, PERMISSIONS.urls.viber, {
-        disable_web_page_preview: true,
-      });
       return bot.sendMessage(
         chatId,
-        "ссылка / qr код в вайбер / чат в телеге закрыт"
+        `
+      ${CURRENT_LANGUAGE.followUs}
+      \n${CURRENT_LANGUAGE.viber}: ${PERMISSIONS.urls.viberOffer}
+      \n${CURRENT_LANGUAGE.telegram}: ${PERMISSIONS.urls.telegaOffer}
+      \n${CURRENT_LANGUAGE.instagram}: ${PERMISSIONS.urls.instagramOffer}`,
+        {
+          disable_web_page_preview: true,
+        }
       );
     }
     case CURRENT_LANGUAGE.mainMenu.events: {
@@ -105,11 +117,11 @@ const checkMainMenu = async (chatId, text) => {
       );
     }
     case CURRENT_LANGUAGE.mainMenu.liveStream: {
-      await bot.sendMessage(
+      return bot.sendMessage(
         chatId,
-        "ссылка на ютуб? \n последняя трансляция? \n другие опции?"
+        `${CURRENT_LANGUAGE.youtubeInfo}\n${PERMISSIONS.urls.youtube}`,
+        { disable_web_page_preview: true }
       );
-      return bot.sendMessage(chatId, PERMISSIONS.urls.youtube);
     }
     default:
       await bot.sendMessage(chatId, CURRENT_LANGUAGE.notFound);

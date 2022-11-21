@@ -11,6 +11,7 @@ const RU = {
     churchChat: "Церковный чат",
     churchLeaders: "Лидеры церкви",
     events: "Мероприятия",
+    feedback: "Форма обратной связи",
   },
   donation: {
     title: "Назначение платежа:",
@@ -45,6 +46,15 @@ const RU = {
     "\n" +
     "💭 Апостол Павел учит, что христиане получают приращение к Телу «…при действии в свою меру каждого члена.» (Еф. 4:16)\n" +
     "Каждого из нас обьеденяет любовь к Богу и любовь к людям. Мы призваны к проповеди Евангелия, что и является главной целью нашего служения.",
+  youtubeInfo:
+    "Дорогой друг, наши последние трансляции, а также другие видео, ты сможешь найти по ссылке указанной ниже",
+  followUs:
+    "Дорогой друг, подписывайся на группы/чаты. Будем рады видеть каждого! 🙏🏼❤️‍🔥",
+  viber: "Наш вайбер",
+  telegram: "Наш телеграм",
+  instagram: "Наш инстаграм",
+  ourFeedback:
+    "Дорогой друг, по ссылке ниже ты можешь заполнить форму обратной связи. Напиши и мы обязательно тебе ответим! 🙏🏼❤️‍🔥",
 };
 const UA = {
   welcome:
@@ -59,6 +69,7 @@ const UA = {
     churchChat: "Церковний чат",
     churchLeaders: "Лідери церкви",
     events: "Події",
+    feedback: " Форма зворотного зв'язку",
   },
   donation: {
     title: "Призначення платежу:",
@@ -93,6 +104,15 @@ const UA = {
     "\n" +
     "💭 Апостол Павло вчить, що християни отримують прирощення до тіла «...при дії в свою міру кожного члена. (Еф. 4:16)\n" +
     "Кожного з нас об'єднує любов до Бога і любов до людей. Ми покликані до проповіді Євангелія, що і є головною метою нашого служіння.",
+  youtubeInfo:
+    "Дорогий друже, наші останні трансляції, а також інші відео, ти зможеш знайти за посиланням вказаним нижче",
+  followUs:
+    "Дорогий друже, підписуйся на групи/чати. Будемо раді бачити кожного! 🙏🏼❤️‍🔥",
+  viber: "Наш вайбер",
+  telegram: "Наш телеграм",
+  instagram: "Наш інстаграм",
+  ourFeedback:
+    "Дорогий друже, за посиланням нижче ти можеш заповнити форму зворотного зв'язку. Напиши і ми обов'язково тобі відповімо! 🙏🏼❤️‍🔥",
 };
 const EN = {
   welcome:
@@ -109,6 +129,7 @@ const EN = {
     churchChat: "Church Chat",
     churchLeaders: "Leaders of the Church",
     events: "Events",
+    feedback: "Feedback form",
   },
   donation: {
     title: "Purpose of payment:",
@@ -143,6 +164,15 @@ const EN = {
     "\n" +
     "The Apostle Paul teaches that Christians receive an increment to the Body ...when each member acts to its own measure. (Eph. 4:16)\n" +
     "Each of us is united by love for God and love for people. We are called to preach the gospel, which is the main purpose of our ministry.",
+  youtubeInfo:
+    "Dear friend, you can find our latest broadcasts, as well as other videos, at the link below",
+  followUs:
+    "Dear friend, subscribe to groups/chats. We will be glad to see everyone! 🙏🏼❤️‍🔥",
+  viber: "Our viber",
+  telegram: "Our telegram",
+  instagram: "Our instagram",
+  ourFeedback:
+    "Dear friend, you can fill out the feedback form using the link below. Write and we will definitely answer you! 🙏🏼❤️‍🔥",
 };
 const PL = {
   welcome:
@@ -157,6 +187,7 @@ const PL = {
     churchChat: "Czat Kościelny",
     churchLeaders: "Przywódcy Kościoła",
     events: "Wydarzenia",
+    feedback: "Formularz opinii",
   },
   donation: {
     title: "Cel płatności:",
@@ -191,6 +222,15 @@ const PL = {
     "\n" +
     "💭Apostoł Paweł naucza, że chrześcijanie otrzymują przyrost ciała ...działając na miarę każdego członka. (EF. 4:16)\n" +
     "Każdego z nas objawia miłość do Boga i miłość do ludzi. Jesteśmy powołani do głoszenia Ewangelii, co jest głównym celem naszej służby.",
+  youtubeInfo:
+    "Drogi przyjacielu, nasze najnowsze transmisje, a także inne filmy, znajdziesz pod linkiem podanym poniżej",
+  followUs:
+    "Drogi przyjacielu, śledź grupy / czaty. Z przyjemnością zobaczymy wszystkich! 🙏🏼❤️‍🔥",
+  viber: "Nasz Viber",
+  telegram: "Nasz Telegram",
+  instagram: "Nasz Instagram",
+  ourFeedback:
+    "Drogi przyjacielu, w linku poniżej możesz wypełnić formularz opinii. Napisz, a na pewno ci odpowiemy! 🙏🏼❤️‍🔥",
 };
 
 module.exports = { RU, UA, EN, PL };
