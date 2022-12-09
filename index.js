@@ -1,10 +1,14 @@
 const TelegramBot = require("node-telegram-bot-api");
-const { RU, UA, EN, PL } = require("./tranlsations");
+
+const { RU, UA, EN, PL } = require("./translations");
+const BIBLE = require("./bibleTexts.json");
 const PERMISSIONS = require("./projects_permissions");
 
 const bot = new TelegramBot(PERMISSIONS.token, { polling: true });
+const BIBLE_PARSE = JSON.parse(JSON.stringify(BIBLE));
 
 let CURRENT_LANGUAGE = RU;
+let CURRENT_LANGUAGE_PREFIX = "RU";
 
 const langOption = {
   reply_markup: JSON.stringify({
@@ -21,7 +25,9 @@ const langOption = {
   }),
 };
 
+// set app language
 const setLanguage = (code) => {
+  CURRENT_LANGUAGE_PREFIX = code.toUpperCase();
   switch (code) {
     case "ua":
       return UA;
@@ -35,6 +41,7 @@ const setLanguage = (code) => {
   }
 };
 
+// return main app menu
 const getMainMenu = () => ({
   reply_markup: JSON.stringify({
     keyboard: [
@@ -54,6 +61,7 @@ const getMainMenu = () => ({
   }),
 });
 
+// check app menu command
 const checkMainMenu = async (chatId, text) => {
   switch (text) {
     case CURRENT_LANGUAGE.mainMenu.donation: {
@@ -128,23 +136,44 @@ const checkMainMenu = async (chatId, text) => {
   }
 };
 
+// show text from json
+const initMessageInterval = (chatId) => {
+  const showBibleText = () => {
+    const text = BIBLE_PARSE[CURRENT_LANGUAGE_PREFIX][intervalTextIndex];
+
+    text
+      ? bot
+          .sendMessage(
+            chatId,
+            BIBLE_PARSE[CURRENT_LANGUAGE_PREFIX][intervalTextIndex]
+          )
+          .then(() => intervalTextIndex++)
+      : clearTimeout(myInterval);
+  };
+
+  const myInterval = setInterval(showBibleText, 6000);
+  let intervalTextIndex = 0;
+};
+
+// init app
 const start = (firstMsg) => {
+  // set commands as settings
   bot.setMyCommands([
     {
-      command: "/start",
-      description: "start",
-    },
-    {
       command: "/language",
-      description: "change language",
+      description: "сменить язык",
     },
   ]);
 
+  // message handler
   bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
+
+    //set current language
     if (firstMsg) {
       CURRENT_LANGUAGE = setLanguage(msg.from.language_code);
+      initMessageInterval(chatId);
       firstMsg = false;
     }
 
@@ -166,6 +195,7 @@ const start = (firstMsg) => {
     }
   });
 
+  // handler for commands settings
   bot.on("callback_query", async (data) => {
     const chatId = data.message.chat.id;
 
@@ -183,8 +213,6 @@ const start = (firstMsg) => {
         );
       }
     }
-
-    console.log("callback_query", data.data);
   });
 };
 
