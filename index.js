@@ -151,7 +151,7 @@ const initMessageInterval = (chatId) => {
       : clearTimeout(myInterval);
   };
 
-  const myInterval = setInterval(showBibleText, 6000);
+  const myInterval = setInterval(showBibleText, 86400000);
   let intervalTextIndex = 0;
 };
 
@@ -173,7 +173,7 @@ const start = (firstMsg) => {
     //set current language
     if (firstMsg) {
       CURRENT_LANGUAGE = setLanguage(msg.from.language_code);
-      initMessageInterval(chatId);
+      setTimeout(() => initMessageInterval(chatId), 60000);
       firstMsg = false;
     }
 

@@ -1,9 +1,3 @@
 # Project exclude paths
 /node_modules/
-/projects_permissions.js
-/.idea/.gitignore
-/.idea/jsLibraryMappings.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/prettier.xml
-/.idea/telegram.iml
+/.idea
