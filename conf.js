@@ -5,6 +5,7 @@ module.exports = {
     church: "https://spasenie.pl/",
     insta: "https://www.instagram.com/salvation.church.pl/",
     viberOffer: "https://bit.ly/39QRvFD",
+    fsOffer: "https://www.facebook.com/salvation.church.warsaw",
     instagramOffer: "https://bit.ly/3HSs82F",
     telegaOffer: "https://t.me/+Mm25_c6fWkE1NjI0",
     homeGroupPhoto:
@@ -14,15 +15,26 @@ module.exports = {
   },
   homeGroup: {
     address:
-      "🏡 Skwer Kardynala Wyszyńskiego 2 (Wola)\n" +
-      "Сергей Ковальчук 729 613 988\n" +
+      "🔸Praga Południe \n" +
       "\n" +
-      "🏡 Powstańców Śląskich 89B (Bemowo)\n" +
-      "Тимофей Литвинка 728 835 455\n" +
-      "Александр Мазалевский +48 662 353 028\n" +
+      "ul. Mińska 48\n" +
+      "☎️tel. 794 309 158 Алексей\n" +
       "\n" +
-      "🏡 Iberyjska 6 (Mokotów)\n" +
-      "Карбовничий Алексей +48 451 011 289",
+      "🔸 Wola \n" +
+      "\n" +
+      "ul. Skwer Kardynala Wyszynskiego 2\n" +
+      "☎️tel. 729 613 988 Сергей\n" +
+      "\n" +
+      "🔸 Bemowo \n" +
+      "\n" +
+      "ul. Powstańców Śląskich 89B\n" +
+      "☎️tel. 662 353 028 Александр\n" +
+      "☎️tel. 728 835 455 Тимофей\n" +
+      "\n" +
+      "🔸 Śródmieście \n" +
+      "\n" +
+      "ul. Al. Jerozolimskie 65\n" +
+      "☎️tel. 729 525 879 Владислав \n",
   },
   info: {
     pastor_1: {
@@ -38,8 +50,10 @@ module.exports = {
     },
   },
   donation: {
-    number: "25 1240 1037 1111 0011 1423 0891",
+    numberPLN: "25 1240 1037 1111 0011 1423 0891",
+    numberUSD: "IBAN PL10 1240 1037 1787 0011 1423 1117",
+    numberSWIFT: "SWIFT PKOPPLPW",
     title: "OFIARA",
-    recipient: "ROSYJSKOJĘZYCHNY ZBÓR KOŚCIOŁA CRZEŚCIJAN BAPTYSTÓW",
+    recipient: "ZBÓR KOŚCIOŁA CRZEŚCIJAN BAPTYSTÓW",
   },
 };

@@ -31,12 +31,18 @@ const getMainMenu = () => ({
 const checkMainMenu = async (chatId, text) => {
   switch (text) {
     case CURRENT_LANGUAGE.mainMenu.donation: {
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.mainTitle);
       await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.recipient);
       await bot.sendMessage(chatId, CONF.donation.recipient);
-      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.number);
-      await bot.sendMessage(chatId, CONF.donation.number);
       await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.title);
-      return bot.sendMessage(chatId, CONF.donation.title);
+      await bot.sendMessage(chatId, CONF.donation.title);
+
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.numberPLN);
+      await bot.sendMessage(chatId, CONF.donation.numberPLN);
+      await bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.numberUSD);
+      await bot.sendMessage(chatId, CONF.donation.numberUSD);
+      await bot.sendMessage(chatId, CONF.donation.numberSWIFT);
+      return bot.sendMessage(chatId, CURRENT_LANGUAGE.donation.lastWords);
     }
     case CURRENT_LANGUAGE.mainMenu.feedback: {
       return bot.sendMessage(
@@ -60,9 +66,10 @@ const checkMainMenu = async (chatId, text) => {
         chatId,
         `
       ${CURRENT_LANGUAGE.followUs}
+      \n${CURRENT_LANGUAGE.instagram}: ${CONF.urls.instagramOffer}
+      \n${CURRENT_LANGUAGE.fs}: ${CONF.urls.fsOffer}
       \n${CURRENT_LANGUAGE.viber}: ${CONF.urls.viberOffer}
-      \n${CURRENT_LANGUAGE.telegram}: ${CONF.urls.telegaOffer}
-      \n${CURRENT_LANGUAGE.instagram}: ${CONF.urls.instagramOffer}`,
+      \n${CURRENT_LANGUAGE.telegram}: ${CONF.urls.telegaOffer}`,
         {
           disable_web_page_preview: true,
         }
