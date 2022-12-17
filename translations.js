@@ -1,6 +1,5 @@
 const RU = {
-  welcome:
-    "Приветствую, друг! По умолчанию установлен русский язык для этого чата, при желении, язык можешь изменить в дополнительном меню",
+  welcome: "Приветствую, друг!",
   askLanguage: "На каком языке тебе удобней получать информацию?",
   setLanguage: "Благодарю, По умолчанию установлен русский язык",
   notFound: "Выбери, пожалуйста, другую команду",
@@ -47,7 +46,11 @@ const RU = {
     "💭 Апостол Павел учит, что христиане получают приращение к Телу «…при действии в свою меру каждого члена.» (Еф. 4:16)\n" +
     "Каждого из нас обьеденяет любовь к Богу и любовь к людям. Мы призваны к проповеди Евангелия, что и является главной целью нашего служения.",
   youtubeInfo:
-    "Дорогой друг, наши последние трансляции, а также другие видео, ты сможешь найти по ссылке указанной ниже",
+    "Прямая трансляция служений церкви «Спасение» проходит по воскресеньям с 11:00. \n" +
+    "Богослужения проходят по адресу ul. Mińska 48, Warszawa\n" +
+    "\n" +
+    "Трансляции, записи служений, а также другие видео доступны на наше ютуб канале по ссылке:\n" +
+    "\n",
   followUs:
     "Дорогой друг, подписывайся на группы/чаты. Будем рады видеть каждого! 🙏🏼❤️‍🔥",
   viber: "Наш вайбер",
@@ -105,7 +108,11 @@ const UA = {
     "💭 Апостол Павло вчить, що християни отримують прирощення до тіла «...при дії в свою міру кожного члена. (Еф. 4:16)\n" +
     "Кожного з нас об'єднує любов до Бога і любов до людей. Ми покликані до проповіді Євангелія, що і є головною метою нашого служіння.",
   youtubeInfo:
-    "Дорогий друже, наші останні трансляції, а також інші відео, ти зможеш знайти за посиланням вказаним нижче",
+    "Пряма трансляція служінь церкви «Спасение» проходить по неділях з 11:00. \n" +
+    "Богослужіння проходять за адресою ul. Mińska 48, Warszawa\n" +
+    "\n" +
+    "Трансляції, записи служінь, а також інші відео доступні на нашому ютуб каналі за посиланням:  n" +
+    "\n",
   followUs:
     "Дорогий друже, підписуйся на групи/чати. Будемо раді бачити кожного! 🙏🏼❤️‍🔥",
   viber: "Наш вайбер",
@@ -113,66 +120,6 @@ const UA = {
   instagram: "Наш інстаграм",
   ourFeedback:
     "Дорогий друже, за посиланням нижче ти можеш заповнити форму зворотного зв'язку. Напиши і ми обов'язково тобі відповімо! 🙏🏼❤️‍🔥",
-};
-const EN = {
-  welcome:
-    "Congratulations, my friend! By default, the English language is set for this chat. if you want, you can change the language in the additional settings",
-  askLanguage:
-    "what language is more convenient for you to receive information in?",
-  setLanguage: "Thank you, the default language is English",
-  notFound: "Please choose another command",
-  menuLiveStream: "Live Stream",
-  mainMenu: {
-    liveStream: "Live Stream",
-    churchInfo: "Information about the church",
-    donation: "Donation",
-    churchChat: "Church Chat",
-    churchLeaders: "Leaders of the Church",
-    events: "Events",
-    feedback: "Feedback form",
-  },
-  donation: {
-    title: "Purpose of payment:",
-    recipient: "Recipient:",
-    number: "Bank account number:",
-  },
-  pastorsInfo: {
-    title: "acting PASTOR",
-    tel: "tel. ",
-    moreInfo: "You will find more information on the our website",
-  },
-  moreEvents: "Follow our latest events on instagram",
-  homeGroup:
-    "HOME GROUPS 🏡☕️📖\n" +
-    "\n" +
-    "Small groups are a place where strangers become friends, where everyone feels needed and valued, and the Word of God changes life, allowing you to know God on a personal level🙏🏼❤️‍🔥\n" +
-    "\n" +
-    "We believe that local churches, as well as each individual believer, grow through participation in small groups!\n" +
-    "\n" +
-    "Choose a convenient address, contact the leader of the group and come every Wednesday at 19:30! 🤍\n" +
-    "\n" +
-    "📍We are waiting for you every Wednesday at 19:30, at the following addresses:\n" +
-    "\n",
-  churchInfo:
-    "Dear Friend!\n" +
-    "\n" +
-    "The Church of Salvation is a place where a person comes into contact with God's reality, by the power of His immeasurable grace and love, under the influence of which he receives SALVATION 🕊\n" +
-    "\n" +
-    "▫️ The Church of Salvation is a place where each person can reveal his spiritual potential, laid down in him by God, as well as develop in his vocation and gifts.\n" +
-    "\n" +
-    "▫️Our values are simplicity of Christianity, relationships, sincerity, hard work, loyalty and dedication.\n" +
-    "\n" +
-    "The Apostle Paul teaches that Christians receive an increment to the Body ...when each member acts to its own measure. (Eph. 4:16)\n" +
-    "Each of us is united by love for God and love for people. We are called to preach the gospel, which is the main purpose of our ministry.",
-  youtubeInfo:
-    "Dear friend, you can find our latest broadcasts, as well as other videos, at the link below",
-  followUs:
-    "Dear friend, subscribe to groups/chats. We will be glad to see everyone! 🙏🏼❤️‍🔥",
-  viber: "Our viber",
-  telegram: "Our telegram",
-  instagram: "Our instagram",
-  ourFeedback:
-    "Dear friend, you can fill out the feedback form using the link below. Write and we will definitely answer you! 🙏🏼❤️‍🔥",
 };
 const PL = {
   welcome:
@@ -223,7 +170,11 @@ const PL = {
     "💭Apostoł Paweł naucza, że chrześcijanie otrzymują przyrost ciała ...działając na miarę każdego członka. (EF. 4:16)\n" +
     "Każdego z nas objawia miłość do Boga i miłość do ludzi. Jesteśmy powołani do głoszenia Ewangelii, co jest głównym celem naszej służby.",
   youtubeInfo:
-    "Drogi przyjacielu, nasze najnowsze transmisje, a także inne filmy, znajdziesz pod linkiem podanym poniżej",
+    "Transmisja na żywo z nabożeństw Kościoła «Спасение» odbywa się w niedziele od godziny 11:00. \n" +
+    "Nabożeństwa odbywają się przy ul. Mińska 48, Warszawa\n" +
+    "\n" +
+    "Transmisje, nagrania usług, a także inne filmy są dostępne na naszym kanale YouTube pod linkiem:  n" +
+    "\n",
   followUs:
     "Drogi przyjacielu, śledź grupy / czaty. Z przyjemnością zobaczymy wszystkich! 🙏🏼❤️‍🔥",
   viber: "Nasz Viber",
@@ -233,4 +184,4 @@ const PL = {
     "Drogi przyjacielu, w linku poniżej możesz wypełnić formularz opinii. Napisz, a na pewno ci odpowiemy! 🙏🏼❤️‍🔥",
 };
 
-module.exports = { RU, UA, EN, PL };
+module.exports = { RU, UA, PL };
